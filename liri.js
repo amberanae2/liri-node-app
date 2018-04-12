@@ -1,21 +1,51 @@
+import { SSL_OP_CIPHER_SERVER_PREFERENCE } from "constants";
+
 require("dotenv").config();
 
-var request = require("request");
+var keys = require('./keys.js');
+var request= require('request');
+var twitter = require('twitter');
+var spotify = require('spotify');
+var fs = require('fs');
 
-var Twitter = require('twitter');
-var client = new Twitter({
-  consumer_key: 'z8jDcGJMAWXQf14kk2NWsgXai',
-  consumer_secret: 'gNbcimUcgUcmCLYzMYdWdsTSvGxgIixpBaCcuRQaavqHBHziQ5',
-  access_token_key: '981230077089284096-CSFCZ0WOguVcSZ5TxReuNIA9d2CObig',
-  access_token_secret: '9i5mxfGdK68xXQrM5z1zz0c9AsTNkimWFo2dTb5Tylnel'
-});
+var nodeargv = process.argv;
+var command = process.argv[2];
 
-var mytweets = process.argv[2]
+var sample = '';
 
-
-
+//// put in argument here,multiple parameters may be needed.
 
 
-  
+/// add switch here
+ switch(nodeargv) {
+     case "my-tweets":
+     myTweets();
+     break;
 
-  
+     case "spotify-this-song":
+     myPlaylist();
+     break;
+
+     case "movie-this":
+     myMovie();
+     break;
+
+     case "do-what-it-says":
+     randomPick();
+     break;
+ }
+
+
+///function here
+
+ function myTweets() {
+     twiterUser.get('search/tweets' , {q:'somethinghere', count: 20}, function(err , data){
+
+     }
+    )
+}
+
+//// do thing function needs to be here 
+
+
+
