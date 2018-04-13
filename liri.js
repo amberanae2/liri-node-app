@@ -15,9 +15,7 @@ var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
 var liriCommand = process.argv[2];
-var searchTitle = process.argv[3];
 
-var sample = '';
 
 
 
@@ -82,45 +80,41 @@ function artistName (songName) {
       }
     });
 }
-var nodeArgs = process.argv;
-var movieName = "";
 
-for (var i = 2; i < nodeArgs.length; i++) {
-
-    if (i > 2 && i < nodeArgs.length) {
-  
-      movieName = movieName + "+" + nodeArgs[i];
-  
-    }
-  
-    else {
-  
-      movieName += nodeArgs[i];
-  
-    }
-  }
-  var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+      
+  function myMovie(movie){
+  var queryUrl = "http://www.omdbapi.com/?t=Lion+King&y=&plot=short&apikey=trilogy"
 
 
 console.log(queryUrl);
 
 request(queryUrl, function(error, response, body) {
+   if (!error && response.statusCode === 200) {
+       var body=JSON.parse(body).Year
+       console.log("Title:" + body.Title);
+       console.log("Release Year: " + body.Year);
+       console.log("Rating: " + body.Rating);
+       console.log("Country:" + body.Country);
+       console.log("Language:" + body.Language);
+       console.log("Plot: " + body.Plot);
+       console.log("Actors:" + body.Actors);
 
-  
-  if (!error && response.statusCode === 200) {
-
-    
-    console.log("Release Year: " + JSON.parse(body).Year);
-  }
+}    
+      else {
+        console.log('Error occurred.')
+}
 });
+}
 
+  function randomPick(random) {
+    fs.readFile('random.txt', "utf8", function(error, data){
+        var txt = data.split(',');
+    
+        spotifySong(txt[1]);
+      });
+  }
   
 
-
-
-
-
-//// do thing function needs to be here 
 
 
 
