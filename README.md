@@ -6,6 +6,10 @@
 
 ##### Command Line uses: "my-tweets" "spotify-this-song" "movie-this" "do-what-it-says"
 
+## What was used:
+
+### NodeJS JavaScript 
+
 
 
 
