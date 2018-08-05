@@ -1,16 +1,17 @@
-# liri-node-app
+# "liri"-node-app
+
+#### The User gets to use an app similar to Apples Siri.
+
+#### The User gets to choose between Spotify,Twitter,Movie, And whatever the user wants
+
+##### Command Line uses: "my-tweets" "spotify-this-song" "movie-this" "do-what-it-says"
+
+
+
+
+
  
- Create an App for LIRI a language interpreter and recognition interface. The goal behind LIRI is to be able to take in Commands using node.js
 
- Command Line uses:
-
- "my-tweets"
-
- "spotify-this-song"
-
- "movie-this"
-
- "do-what-it-says"
 
 
  
